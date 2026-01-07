@@ -22,6 +22,7 @@
                         'brand-gold': '#A68B6D',
                         'brand-dark': '#1a1a1a',
                         'brand-light': '#fafafa',
+                        'hero-bg': '#212121',
                     },
                     fontFamily: {
                         'sans': ['Inter', 'sans-serif'],
@@ -33,6 +34,16 @@
     </script>
     
     <style>
+        /* Подключение Vetrino.otf в head через @font-face */
+        @font-face {
+            font-family: 'Vetrino';
+            /* Путь изменен на .otf, формат указан как opentype */
+            src: url('fonts/Vetrino.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
         html { scroll-behavior: smooth; }
         .service-card:hover img { transform: scale(1.05); }
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
@@ -90,19 +101,18 @@
     </div>
 
     <!-- Hero Section -->
-    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+    <header class="relative h-screen flex items-center justify-center overflow-hidden text-center bg-hero-bg">
+        <!-- Фоновое изображение восстановлено -->
         <div class="absolute inset-0 z-0">
             <img src="images/me-1-2.jpg?auto=format&fit=crop&q=80&w=2000" 
                  alt="" 
                  class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-black/40"></div>
         </div>
-        <div class="relative z-10 text-center text-white px-6">
-
-
+        
         <div class="relative z-10 text-center text-white px-6 flex flex-col items-center">
-            <!-- Адаптивный SVG Логотип - Размеры увеличены -->
-            <div class="w-80 md:w-[480px] lg:w-[550px] mt-7 mb-2 opacity-90 transition-all duration-700">
+            <!-- Адаптивный SVG Логотип -->
+            <div class="w-80 md:w-[480px] lg:w-[550px] mt-[50px] mb-0 opacity-90 transition-all duration-700">
                 <svg viewBox="0 0 400 380" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
                     <g transform="translate(100, 40)">
                         <path d="M100 0C44.7715 0 0 44.7715 0 100C0 155.228 44.7715 200 100 200C155.228 200 200 155.228 200 100" stroke="white" stroke-width="2" stroke-linecap="round"/>
@@ -111,17 +121,14 @@
                     </g>
                     <!-- Текстовый блок логотипа -->
                     <text x="200" y="300" text-anchor="middle" fill="white">
-                        <!-- Capturing Soul в одну строку шрифтом Vetrino -->
-                        <tspan x="200" dy="0" font-family="Vetrino, serif" font-size="34" letter-spacing="6">CAPTURING SOUL</tspan>
-                        <!-- Подпись под основной надписью -->
+                        <!-- Шрифт будет искаться в подключенном выше @font-face -->
+                        <tspan x="200" dy="0" font-family="'Vetrino', serif" font-size="34" letter-spacing="6">CAPTURING SOUL</tspan>
                         <tspan x="200" dy="2.4em" font-family="Montserrat, sans-serif" font-size="9" letter-spacing="4" font-weight="400" opacity="0.8">PROFESSIONAL PHOTOGRAPHY IN PRAGUE</tspan>
                     </text>
                 </svg>
             </div>
             
             <a href="#services" class="border border-white/40 hover:bg-white hover:text-brand-dark transition-all px-10 py-4 text-xs uppercase tracking-widest font-bold inline-block font-display">View Pricing</a>
-        </div>
-
         </div>
     </header>
 
@@ -138,7 +145,7 @@
             </div>
             <div class="aspect-[4/5] bg-gray-100 overflow-hidden reveal">
                 <img src="images/me-2.jpg?auto=format&fit=crop&q=80&w=800" 
-                     alt="" 
+                     alt="[Портрет Анастасии]" 
                      class="w-full h-full object-cover">
             </div>
         </div>
@@ -153,11 +160,10 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20">
-                <!-- Portrait -->
                 <div class="service-card group">
                     <div class="overflow-hidden mb-6 aspect-[4/5] bg-white">
                         <img src="images/ind-3.JPG?auto=format&fit=crop&q=80&w=800" 
-                             alt="" 
+                             alt="[Пример индивидуальной фотосессии]" 
                              class="w-full h-full object-cover transition-transform duration-700">
                     </div>
                     <h3 class="font-display text-2xl font-bold mb-4 uppercase tracking-tight">Portrait Session</h3>
@@ -169,11 +175,10 @@
                     <div class="text-xl font-bold font-display border-t border-gray-100 pt-4">2 600 CZK</div>
                 </div>
 
-                <!-- Love Story -->
                 <div class="service-card group">
                     <div class="overflow-hidden mb-6 aspect-[4/5] bg-white">
                         <img src="images/love-3.jpg?auto=format&fit=crop&q=80&w=800" 
-                             alt="" 
+                             alt="[Пример фотосессии Love Story]" 
                              class="w-full h-full object-cover transition-transform duration-700">
                     </div>
                     <h3 class="font-display text-2xl font-bold mb-4 uppercase tracking-tight">Love Story</h3>
@@ -185,11 +190,10 @@
                     <div class="text-xl font-bold font-display border-t border-gray-100 pt-4">3 000 CZK</div>
                 </div>
 
-                <!-- Family photoshoot -->
                 <div class="service-card group">
                     <div class="overflow-hidden mb-6 aspect-[4/5] bg-white">
-                        <img src="images/fam-1.JPG?auto=format&fit=crop&q=80&w=800" 
-                             alt="" 
+                        <img src="images/fam-1.JPG?auto=format&fit=crop&w=800&q=80" 
+                             alt="[Пример семейной фотосессии]" 
                              class="w-full h-full object-cover transition-transform duration-700">
                     </div>
                     <h3 class="font-display text-2xl font-bold mb-4 uppercase tracking-tight">Family photoshoot</h3>
@@ -239,10 +243,10 @@
             </div>
             <div class="relative reveal">
                 <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1200" 
-                     alt="[Image of wedding couple]" 
+                     alt="[Свадебная фотография]" 
                      class="w-full aspect-square object-cover grayscale hover:grayscale-0 transition-all duration-1000">
                 <div class="absolute -bottom-10 -left-10 bg-brand-gold p-10 hidden md:block">
-                    <p class="text-xs uppercase tracking-widest font-bold">Booking 2026</p>
+                    <p class="text-xs uppercase tracking-widest font-bold text-white">Booking 2026</p>
                 </div>
             </div>
         </div>
