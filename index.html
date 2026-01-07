@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react';
 
 // Inline SVG Icons for maximum reliability
 const InstagramIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
 );
 
 const SendIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" x2="11" y1="2" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" x2="11" y1="2" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
 );
 
 const MailIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
 );
 
 const MenuIcon = () => (
@@ -19,6 +19,10 @@ const MenuIcon = () => (
 
 const XIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+);
+
+const ChevronRight = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
 );
 
 const App = () => {
@@ -31,56 +35,69 @@ const App = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
+  const navigation = [
+    { name: 'Gallery', href: '#gallery' },
     { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Weddings', href: '#wedding' },
-    { name: 'Reviews', href: '#reviews' },
     { name: 'Contact', href: '#contact' },
   ];
 
-  const services = [
+  const portfolioItems = [
     {
-      title: "Portrait Session",
-      price: "2 600 CZK",
-      features: ["1.5 hours of shooting", "25 retouched photos", "All good shots (80+)"],
-      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800"
+      id: 1,
+      title: "Ethereal Dreams",
+      category: "Digital Art",
+      image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Love Story",
-      price: "3 000 CZK",
-      features: ["2 hours in Prague center", "40 retouched photos", "Moodboard & styling"],
-      image: "https://images.unsplash.com/photo-1516589174184-c68526671ee6?auto=format&fit=crop&q=80&w=800"
+      id: 2,
+      title: "Urban Silence",
+      category: "Oil Painting",
+      image: "https://images.unsplash.com/photo-1541963463532-d68292c34b19?auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Family Heritage",
-      price: "3 500 CZK",
-      features: ["Home or outdoor shoot", "30 retouched photos", "5 gift prints"],
-      image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=800"
+      id: 3,
+      title: "Nature's Whisper",
+      category: "Watercolor",
+      image: "https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: 4,
+      title: "Abstract Rhythm",
+      category: "Mixed Media",
+      image: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: 5,
+      title: "Golden Hour",
+      category: "Concept Art",
+      image: "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: 6,
+      title: "Midnight Echo",
+      category: "Digital Illustration",
+      image: "https://images.unsplash.com/photo-1554188248-986adbb73be4?auto=format&fit=crop&w=800&q=80"
     }
   ];
 
-  const weddingPackages = [
-    { title: "Civil Ceremony", price: "12 000 CZK", desc: "3 hours, ceremony + walk, 120+ retouched photos." },
-    { title: "Standard Day", price: "22 000 CZK", desc: "8 hours, from prep to banquet, 350+ photos, print box." },
-    { title: "Full Story", price: "32 000 CZK", desc: "Up to 14 hours, drone shots, same-day preview, 600+ photos." }
-  ];
-
   return (
-    <div className="min-h-screen bg-white text-stone-900 font-sans selection:bg-stone-200">
+    <div className="min-h-screen bg-neutral-50 text-neutral-900 font-sans selection:bg-neutral-200">
       {/* Navigation */}
-      <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-white/90 backdrop-blur-md py-4 shadow-sm' : 'bg-transparent py-8'}`}>
+      <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 backdrop-blur-md py-4 shadow-sm' : 'bg-transparent py-6'}`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <a href="#" className="text-xl font-bold tracking-[0.2em] uppercase">
-            Anastasiya <span className="text-stone-400">Bondar</span>
+          <a href="#" className="text-2xl font-bold tracking-tight">
+            BONDAR<span className="text-neutral-400">.ART</span>
           </a>
 
           <div className="hidden md:flex space-x-8 items-center">
-            {navLinks.map((link) => (
-              <a key={link.name} href={link.href} className="text-xs font-semibold uppercase tracking-widest hover:text-stone-400 transition-colors">
-                {link.name}
+            {navigation.map((item) => (
+              <a key={item.name} href={item.href} className="text-sm font-medium uppercase tracking-widest hover:text-neutral-400 transition-colors">
+                {item.name}
               </a>
             ))}
+            <a href="#contact" className="bg-neutral-900 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-neutral-700 transition-colors">
+              Get in Touch
+            </a>
           </div>
 
           <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -89,149 +106,128 @@ const App = () => {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-[60] bg-white flex flex-col items-center justify-center space-y-8 animate-in fade-in slide-in-from-right duration-300">
-          <button className="absolute top-8 right-6" onClick={() => setIsMenuOpen(false)}><XIcon /></button>
-          {navLinks.map((link) => (
-            <a key={link.name} href={link.href} onClick={() => setIsMenuOpen(false)} className="text-2xl font-bold uppercase tracking-widest text-stone-900">
-              {link.name}
+        <div className="fixed inset-0 z-[60] bg-white flex flex-col items-center justify-center space-y-8">
+          <button className="absolute top-6 right-6" onClick={() => setIsMenuOpen(false)}><XIcon /></button>
+          {navigation.map((item) => (
+            <a key={item.name} href={item.href} onClick={() => setIsMenuOpen(false)} className="text-3xl font-bold">
+              {item.name}
             </a>
           ))}
         </div>
       )}
 
-      {/* Hero */}
-      <header className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <img 
-            src="https://images.unsplash.com/photo-1500051638674-bb996a0c271b?auto=format&fit=crop&q=80&w=2000" 
-            className="w-full h-full object-cover" 
-            alt="Hero Background"
-          />
-          <div className="absolute inset-0 bg-black/40"></div>
-        </div>
-        <div className="relative text-center text-white px-6">
-          <h1 className="text-5xl md:text-8xl font-bold uppercase tracking-tighter mb-6">
-            Capturing <span className="italic text-stone-300">Soul</span>
-          </h1>
-          <p className="text-sm md:text-lg uppercase tracking-[0.4em] mb-12 opacity-80">
-            Professional Photography in Prague & Europe
-          </p>
-          <a href="#services" className="px-10 py-4 border border-white/50 hover:bg-white hover:text-black transition-all text-xs font-bold uppercase tracking-widest">
-            View Pricing
-          </a>
-        </div>
-      </header>
-
-      {/* About */}
-      <section id="about" className="py-32 px-6 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <div>
-            <span className="text-xs font-bold uppercase tracking-[0.3em] text-stone-400 mb-4 block italic">About Me</span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">Hi, I'm Anastasiya.</h2>
-            <div className="space-y-6 text-stone-600 text-lg leading-relaxed">
-              <p>Photography for me is more than just pressing a shutter button. It's the art of seeing beauty in details, sincerity in emotions, and catching those "unposed" moments that become the most precious.</p>
-              <p>For over 5 years, I've been helping my clients see their true selves against the backdrop of beautiful Prague and throughout Europe. My goal is to make you feel light and confident during the shoot.</p>
-            </div>
-          </div>
-          <div className="aspect-[4/5] overflow-hidden rounded-sm shadow-2xl">
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover" alt="Anastasiya Bondar" />
-          </div>
-        </div>
-      </section>
-
-      {/* Services */}
-      <section id="services" className="py-32 px-6 bg-stone-50">
-        <div className="max-w-7xl mx-auto text-center mb-20">
-          <span className="text-xs font-bold uppercase tracking-[0.3em] text-stone-400 mb-4 block italic">Services</span>
-          <h2 className="text-4xl md:text-5xl font-bold italic">Individual Solutions</h2>
-        </div>
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
-          {services.map((s, i) => (
-            <div key={i} className="group">
-              <div className="aspect-[4/5] overflow-hidden mb-6 bg-stone-200">
-                <img src={s.image} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt={s.title} />
+      {/* Hero Section */}
+      <section className="relative pt-40 pb-20 md:pt-60 md:pb-40 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="max-w-3xl">
+            <h1 className="text-6xl md:text-8xl font-bold leading-tight mb-8">
+              Anastasiya <br />
+              <span className="text-neutral-400 italic">Bondar</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-neutral-600 mb-10 leading-relaxed max-w-2xl">
+              Visual Artist & Illustrator based in the digital space. 
+              Creating worlds through color, light, and emotion.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <a href="#gallery" className="bg-neutral-900 text-white px-8 py-4 rounded-full flex items-center gap-2 hover:bg-neutral-700 transition-all">
+                View Works <ChevronRight />
+              </a>
+              <div className="flex items-center gap-4 px-4">
+                <a href="https://www.instagram.com/bonbonka_artist/" target="_blank" rel="noopener noreferrer" className="p-3 bg-white border border-neutral-200 rounded-full hover:bg-neutral-50 transition-colors"><InstagramIcon /></a>
+                <a href="https://t.me/Bonbonkart_" target="_blank" rel="noopener noreferrer" className="p-3 bg-white border border-neutral-200 rounded-full hover:bg-neutral-50 transition-colors"><SendIcon /></a>
               </div>
-              <h3 className="text-2xl font-bold mb-4 uppercase tracking-tight">{s.title}</h3>
-              <ul className="space-y-3 mb-8 text-stone-500 text-sm">
-                {s.features.map((f, j) => (
-                  <li key={j} className="flex items-center gap-3">
-                    <span className="text-stone-400">✓</span> {f}
-                  </li>
-                ))}
-              </ul>
-              <div className="text-xl font-bold border-t border-stone-200 pt-4">{s.price}</div>
             </div>
-          ))}
+          </div>
         </div>
+        <div className="absolute top-20 right-[-10%] w-[600px] h-[600px] bg-neutral-200 rounded-full blur-[120px] opacity-30 -z-0"></div>
       </section>
 
-      {/* Weddings */}
-      <section id="wedding" className="bg-stone-900 text-white py-32 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <div>
-            <span className="text-xs font-bold uppercase tracking-[0.3em] text-stone-500 mb-4 block italic">Weddings</span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-12">Your Love Story</h2>
-            <div className="space-y-8">
-              {weddingPackages.map((p, i) => (
-                <div key={i} className="border-b border-white/10 pb-8 last:border-0">
-                  <div className="flex justify-between items-baseline mb-2">
-                    <h4 className="text-xl font-bold uppercase tracking-wider">{p.title}</h4>
-                    <span className="text-stone-400 font-bold text-2xl">{p.price}</span>
-                  </div>
-                  <p className="text-sm text-stone-500">{p.desc}</p>
+      {/* Gallery Section */}
+      <section id="gallery" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex justify-between items-end mb-16">
+            <div>
+              <h2 className="text-sm uppercase tracking-[0.3em] text-neutral-400 mb-4 font-bold">Portfolio</h2>
+              <h3 className="text-4xl md:text-5xl font-bold">Selected Works</h3>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {portfolioItems.map((item) => (
+              <div key={item.id} className="group cursor-pointer">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-neutral-100 mb-4">
+                  <img src={item.image} alt={item.title} className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105" />
                 </div>
-              ))}
-            </div>
+                <h4 className="text-xl font-bold mb-1">{item.title}</h4>
+                <p className="text-neutral-500 text-sm uppercase tracking-widest">{item.category}</p>
+              </div>
+            ))}
           </div>
-          <div className="relative">
-            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1200" className="w-full aspect-square object-cover grayscale opacity-60" alt="Wedding" />
-            <div className="absolute -bottom-10 -left-10 bg-white text-black p-10 hidden md:block">
-              <p className="text-xs font-bold uppercase tracking-widest">Booking 2026</p>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-24 bg-neutral-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80" alt="Anastasiya Bondar" className="w-full h-full object-cover" />
+            </div>
+            <div>
+              <h2 className="text-sm uppercase tracking-[0.3em] text-neutral-400 mb-4 font-bold">The Artist</h2>
+              <h3 className="text-4xl md:text-5xl font-bold mb-8">About Anastasiya</h3>
+              <div className="space-y-6 text-lg text-neutral-600 leading-relaxed">
+                <p>Hello! I'm Anastasiya Bondar, a multidisciplinary artist focused on creating immersive visual experiences. My work often explores the intersection between reality and dreams.</p>
+                <p>By 2026, I have expanded my practice into digital concept design and traditional oil painting, bridging classical techniques and modern technology.</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Reviews */}
-      <section id="reviews" className="py-32 px-6 max-w-7xl mx-auto">
-        <div className="text-center mb-20">
-          <span className="text-xs font-bold uppercase tracking-[0.3em] text-stone-400 mb-4 block italic">Reviews</span>
-          <h2 className="text-4xl font-bold italic">Words of Thanks</h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            { text: "Anastasiya made our wedding unforgettable. The photos are so alive!", author: "Maria & Jan" },
-            { text: "Best experience in Prague. Helped with posing and found quiet locations.", author: "Alexandra" },
-            { text: "Commercial shoot for my brand was perfect. Very stylish result.", author: "Denis, Designer" }
-          ].map((r, i) => (
-            <div key={i} className="bg-stone-50 p-10 border-t-4 border-stone-200">
-              <p className="italic text-stone-600 mb-8 leading-relaxed">"{r.text}"</p>
-              <div className="text-xs font-bold uppercase tracking-widest text-stone-400">— {r.author}</div>
+      {/* Contact Section */}
+      <section id="contact" className="py-24 bg-neutral-900 text-white relative">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-4xl">
+            <h2 className="text-sm uppercase tracking-[0.3em] text-neutral-500 mb-4 font-bold">Contact</h2>
+            <h3 className="text-5xl md:text-7xl font-bold mb-12">Let's create something <span className="italic text-neutral-400">extraordinary</span> together.</h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="space-y-8">
+                <a href="https://www.instagram.com/bonbonka_artist/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 group transition-all">
+                  <div className="w-16 h-16 rounded-full bg-neutral-800 flex items-center justify-center transition-all group-hover:bg-white group-hover:text-neutral-900"><InstagramIcon /></div>
+                  <div>
+                    <p className="text-sm text-neutral-500 uppercase tracking-widest mb-1">Instagram</p>
+                    <p className="text-xl font-medium">@bonbonka_artist</p>
+                  </div>
+                </a>
+                <a href="https://t.me/Bonbonkart_" target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 group transition-all">
+                  <div className="w-16 h-16 rounded-full bg-neutral-800 flex items-center justify-center transition-all group-hover:bg-white group-hover:text-neutral-900"><SendIcon /></div>
+                  <div>
+                    <p className="text-sm text-neutral-500 uppercase tracking-widest mb-1">Telegram</p>
+                    <p className="text-xl font-medium">@Bonbonkart_</p>
+                  </div>
+                </a>
+                <a href="mailto:anastasiya.bondar888@gmail.com" className="flex items-center gap-6 group transition-all">
+                  <div className="w-16 h-16 rounded-full bg-neutral-800 flex items-center justify-center transition-all group-hover:bg-white group-hover:text-neutral-900"><MailIcon /></div>
+                  <div>
+                    <p className="text-sm text-neutral-500 uppercase tracking-widest mb-1">Email</p>
+                    <p className="text-xl font-medium">anastasiya.bondar888@gmail.com</p>
+                  </div>
+                </a>
+              </div>
             </div>
-          ))}
+          </div>
         </div>
       </section>
 
-      {/* Contact */}
-      <footer id="contact" className="py-32 bg-white border-t border-stone-100 px-6">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl font-bold italic mb-12">Anastasiya Bondar</h2>
-          <div className="flex flex-wrap justify-center gap-10 mb-20">
-            <a href="https://www.instagram.com/bonbonka_artist/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-bold uppercase text-xs tracking-widest hover:text-stone-400 transition-colors">
-              <InstagramIcon /> Instagram
-            </a>
-            <a href="https://t.me/Bonbonkart_" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-bold uppercase text-xs tracking-widest hover:text-stone-400 transition-colors">
-              <SendIcon /> Telegram
-            </a>
-            <a href="mailto:anastasiya.bondar888@gmail.com" className="flex items-center gap-2 font-bold uppercase text-xs tracking-widest hover:text-stone-400 transition-colors">
-              <MailIcon /> Email
-            </a>
-          </div>
-          <p className="text-[10px] text-stone-400 uppercase tracking-[0.5em]">
-            © 2026 Bondar Photography. Made for moments.
-          </p>
+      {/* Footer */}
+      <footer className="py-12 bg-neutral-900 border-t border-neutral-800 text-neutral-500">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="text-xl font-bold text-white">BONDAR<span className="text-neutral-500">.ART</span></div>
+          <p className="text-sm">© 2026 Anastasiya Bondar. All rights reserved.</p>
         </div>
       </footer>
     </div>
