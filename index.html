@@ -45,6 +45,8 @@
     <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
             <a href="#" class="font-display font-bold text-xl tracking-widest uppercase">Anastasiia Bandar</a>
+            
+            <!-- Десктопное меню -->
             <div class="hidden md:flex space-x-8 text-xs uppercase tracking-widest font-semibold">
                 <a href="#about" class="hover:text-brand-gold transition-colors">Обо мне</a>
                 <a href="#services" class="hover:text-brand-gold transition-colors">Услуги</a>
@@ -52,7 +54,28 @@
                 <a href="#reviews" class="hover:text-brand-gold transition-colors">Отзывы</a>
                 <a href="#contact" class="hover:text-brand-gold transition-colors">Контакты</a>
             </div>
-            <button class="md:hidden text-2xl"><i class="fa-solid fa-bars-staggered"></i></button>
+
+            <!-- Кнопка бургер (только мобильные) -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl p-2 transition-transform active:scale-90">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+
+        <!-- Мобильное меню (Overlay) -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white z-[60] flex flex-col items-center justify-center space-y-8 text-xs uppercase tracking-[0.3em] font-semibold transition-transform duration-500 translate-x-full md:hidden">
+            <button id="close-menu-btn" class="absolute top-6 right-6 text-2xl p-2">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <a href="#about" class="mobile-link hover:text-brand-gold transition-colors">Обо мне</a>
+            <a href="#services" class="mobile-link hover:text-brand-gold transition-colors">Услуги</a>
+            <a href="#wedding" class="mobile-link hover:text-brand-gold transition-colors">Свадьбы</a>
+            <a href="#reviews" class="mobile-link hover:text-brand-gold transition-colors">Отзывы</a>
+            <a href="#contact" class="mobile-link hover:text-brand-gold transition-colors text-brand-gold">Контакты</a>
+            
+            <div class="pt-10 flex space-x-6 text-lg text-gray-400">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
         </div>
     </nav>
 
@@ -76,7 +99,7 @@
     <!-- Обо мне -->
     <section id="about" class="py-32 px-6 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div class="reveal active">
+            <div class="reveal">
                 <h2 class="font-display text-xs uppercase tracking-[0.3em] text-brand-gold font-bold mb-4">About Me</h2>
                 <p class="text-4xl md:text-5xl font-display font-bold mb-8 italic">Привет, я Анастасия.</p>
                 <div class="space-y-6 text-gray-600">
@@ -84,8 +107,7 @@
                     <p>Уже более 5 лет я помогаю моим героям увидеть себя настоящими на фоне прекрасной Праги и по всей Европе. Моя задача — сделать так, чтобы во время съемки вы чувствовали себя легко и уверенно.</p>
                 </div>
             </div>
-            <div class="aspect-[4/5] bg-gray-100 overflow-hidden reveal active">
-                <!-- Плейсхолдер для вашего фото -->
+            <div class="aspect-[4/5] bg-gray-100 overflow-hidden reveal">
                 <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=800" 
                      alt="" 
                      class="w-full h-full object-cover">
@@ -121,8 +143,7 @@
                 <!-- Love Story -->
                 <div class="service-card group">
                     <div class="overflow-hidden mb-6 aspect-[4/5] bg-white">
-                        <!-- Заменил images/1.jpg на рабочий URL для демонстрации -->
-                        <img src="images/1.jpg?auto=format&fit=crop&q=80&w=800" 
+                        <img src="https://images.unsplash.com/photo-1516589174184-c68526671ee6?auto=format&fit=crop&q=80&w=800" 
                              alt="[Image of Love Story]" 
                              class="w-full h-full object-cover transition-transform duration-700">
                     </div>
@@ -157,7 +178,7 @@
     <!-- Свадебная секция -->
     <section id="wedding" class="bg-brand-dark text-white py-32 px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div>
+            <div class="reveal">
                 <h2 class="font-display text-xs uppercase tracking-[0.3em] text-brand-gold font-bold mb-4">Weddings</h2>
                 <p class="text-4xl md:text-5xl font-display font-bold mb-12">Ваша история любви</p>
                 
@@ -187,7 +208,7 @@
                     </div>
                 </div>
             </div>
-            <div class="relative">
+            <div class="relative reveal">
                 <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1200" 
                      alt="" 
                      class="w-full aspect-square object-cover grayscale hover:grayscale-0 transition-all duration-1000">
@@ -204,15 +225,15 @@
         <p class="text-4xl font-display font-bold mb-20 text-center italic">Слова благодарности</p>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            <div class="bg-brand-light p-10 border-t-2 border-brand-gold">
+            <div class="bg-brand-light p-10 border-t-2 border-brand-gold reveal">
                 <p class="italic text-gray-600 mb-8">"Анастасия сделала нашу свадьбу незабываемой. Фотографии получились такими живыми, мы даже не заметили, как пролетело время съемки!"</p>
                 <div class="font-bold uppercase text-xs tracking-widest">— Мария и Ян</div>
             </div>
-            <div class="bg-brand-light p-10 border-t-2 border-brand-gold">
+            <div class="bg-brand-light p-10 border-t-2 border-brand-gold reveal">
                 <p class="italic text-gray-600 mb-8">"Лучший опыт фотосессии в Праге. Настя очень помогла с позированием и выбором локаций, где не было толп туристов."</p>
                 <div class="font-bold uppercase text-xs tracking-widest">— Александра</div>
             </div>
-            <div class="bg-brand-light p-10 border-t-2 border-brand-gold">
+            <div class="bg-brand-light p-10 border-t-2 border-brand-gold reveal">
                 <p class="italic text-gray-600 mb-8">"Коммерческая съемка для моего бренда прошла на одном дыхании. Результат превзошел все ожидания, очень стильно."</p>
                 <div class="font-bold uppercase text-xs tracking-widest">— Денис, дизайнер</div>
             </div>
@@ -255,7 +276,30 @@
     </footer>
 
     <script>
-        // Простая анимация появления при скролле
+        // ЛОГИКА МОБИЛЬНОГО МЕНЮ
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        // Открыть меню
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+        });
+
+        // Закрыть меню (кнопка крестик)
+        closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+        });
+
+        // Закрыть меню при клике на любую ссылку
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+            });
+        });
+
+        // Анимация появления при скролле
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -269,4 +313,3 @@
 
 </body>
 </html>
-
