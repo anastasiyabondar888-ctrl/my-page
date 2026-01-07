@@ -37,7 +37,7 @@
         .service-card:hover img { transform: scale(1.05); }
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
-        /* Плавное скрытие скроллбара для меню */
+        /* Скрытие скроллбара */
         #mobile-menu::-webkit-scrollbar { display: none; }
         #mobile-menu { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
@@ -58,20 +58,24 @@
                 <a href="#contact" class="hover:text-brand-gold transition-colors text-brand-gold">Контакты</a>
             </div>
 
-            <!-- Кнопка бургер (только мобильные) -->
+            <!-- Кнопка бургер -->
             <button id="mobile-menu-btn" class="md:hidden text-2xl p-2 transition-transform active:scale-90">
                 <i class="fa-solid fa-bars-staggered"></i>
             </button>
         </div>
+    </nav>
 
-        <!-- Мобильное меню (Overlay) -->
-        <div id="mobile-menu" class="fixed inset-0 bg-white z-[60] flex flex-col items-center justify-start pt-8 pb-12 space-y-8 text-sm uppercase tracking-[0.3em] font-semibold transition-transform duration-500 translate-x-full md:hidden overflow-y-auto">
-            <div class="w-full flex justify-end px-6 mb-4">
-                <button id="close-menu-btn" class="text-2xl p-2">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            
+    <!-- Мобильное меню (Вынесено из nav для корректного отображения высоты) -->
+    <div id="mobile-menu" class="fixed inset-0 h-screen w-full bg-white z-[70] flex flex-col items-center justify-start transition-transform duration-500 translate-x-full md:hidden overflow-y-auto">
+        <!-- Верхняя планка с кнопкой закрытия -->
+        <div class="w-full flex justify-end px-6 h-20 items-center">
+            <button id="close-menu-btn" class="text-2xl p-2">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        
+        <!-- Ссылки (начало сразу после верхней планки) -->
+        <div class="flex flex-col items-center space-y-8 text-sm uppercase tracking-[0.3em] font-semibold py-4">
             <a href="#about" class="mobile-link hover:text-brand-gold transition-colors">Обо мне</a>
             <a href="#services" class="mobile-link hover:text-brand-gold transition-colors">Услуги</a>
             <a href="#wedding" class="mobile-link hover:text-brand-gold transition-colors">Свадьбы</a>
@@ -83,9 +87,9 @@
                 <a href="#" class="hover:text-brand-gold transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
             
-            <p class="pt-8 text-[9px] text-gray-300 tracking-[0.5em] uppercase pb-10">Anastasiia Bandar Photography</p>
+            <p class="pt-8 text-[9px] text-gray-300 tracking-[0.5em] uppercase pb-12">Anastasiia Bandar Photography</p>
         </div>
-    </nav>
+    </div>
 
     <!-- Hero Section -->
     <header class="relative h-screen flex items-center justify-center overflow-hidden">
@@ -293,16 +297,16 @@
         // Открыть меню
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.remove('translate-x-full');
-            document.body.style.overflow = 'hidden'; // Запретить прокрутку сайта под меню
+            document.body.style.overflow = 'hidden';
         });
 
-        // Закрыть меню (кнопка крестик)
+        // Закрыть меню
         closeMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.add('translate-x-full');
-            document.body.style.overflow = ''; // Вернуть прокрутку
+            document.body.style.overflow = '';
         });
 
-        // Закрыть меню при клике на любую ссылку
+        // Закрыть при клике на ссылку
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('translate-x-full');
@@ -310,7 +314,7 @@
             });
         });
 
-        // Анимация появления при скролле
+        // Анимация при скролле
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
