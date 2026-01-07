@@ -1,17 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Instagram, 
-  Mail, 
-  Send, 
-  Menu, 
-  X, 
-  ChevronRight, 
-  Camera, 
-  Heart, 
-  Users, 
-  CheckCircle2,
-  Phone
-} from 'lucide-react';
+
+// Inline SVG Icons for maximum reliability
+const InstagramIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+);
+
+const SendIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" x2="11" y1="2" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+);
+
+const MailIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+);
+
+const MenuIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+);
+
+const XIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+);
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -76,34 +84,32 @@ const App = () => {
           </div>
 
           <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <X /> : <Menu />}
+            {isMenuOpen ? <XIcon /> : <MenuIcon />}
           </button>
         </div>
       </nav>
 
       {/* Mobile Menu */}
-      <div className={`fixed inset-0 z-[60] bg-white transition-transform duration-500 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`}>
-        <div className="p-6 flex justify-end">
-          <button onClick={() => setIsMenuOpen(false)}><X className="w-8 h-8" /></button>
-        </div>
-        <div className="flex flex-col items-center justify-center space-y-8 h-full -mt-20">
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-[60] bg-white flex flex-col items-center justify-center space-y-8 animate-in fade-in slide-in-from-right duration-300">
+          <button className="absolute top-8 right-6" onClick={() => setIsMenuOpen(false)}><XIcon /></button>
           {navLinks.map((link) => (
-            <a key={link.name} href={link.href} onClick={() => setIsMenuOpen(false)} className="text-2xl font-bold uppercase tracking-widest">
+            <a key={link.name} href={link.href} onClick={() => setIsMenuOpen(false)} className="text-2xl font-bold uppercase tracking-widest text-stone-900">
               {link.name}
             </a>
           ))}
         </div>
-      </div>
+      )}
 
       {/* Hero */}
-      <header className="relative h-screen flex items-center justify-center">
+      <header className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1500051638674-bb996a0c271b?auto=format&fit=crop&q=80&w=2000" 
             className="w-full h-full object-cover" 
             alt="Hero Background"
           />
-          <div className="absolute inset-0 bg-black/30"></div>
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
         <div className="relative text-center text-white px-6">
           <h1 className="text-5xl md:text-8xl font-bold uppercase tracking-tighter mb-6">
@@ -144,13 +150,15 @@ const App = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
           {services.map((s, i) => (
             <div key={i} className="group">
-              <div className="aspect-[4/5] overflow-hidden mb-6">
+              <div className="aspect-[4/5] overflow-hidden mb-6 bg-stone-200">
                 <img src={s.image} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt={s.title} />
               </div>
               <h3 className="text-2xl font-bold mb-4 uppercase tracking-tight">{s.title}</h3>
               <ul className="space-y-3 mb-8 text-stone-500 text-sm">
                 {s.features.map((f, j) => (
-                  <li key={j} className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-stone-400" /> {f}</li>
+                  <li key={j} className="flex items-center gap-3">
+                    <span className="text-stone-400">✓</span> {f}
+                  </li>
                 ))}
               </ul>
               <div className="text-xl font-bold border-t border-stone-200 pt-4">{s.price}</div>
@@ -211,14 +219,14 @@ const App = () => {
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-4xl font-bold italic mb-12">Anastasiya Bondar</h2>
           <div className="flex flex-wrap justify-center gap-10 mb-20">
-            <a href="https://www.instagram.com/bonbonka_artist/" className="flex items-center gap-2 font-bold uppercase text-xs tracking-widest hover:text-stone-400 transition-colors">
-              <Instagram className="w-4 h-4" /> Instagram
+            <a href="https://www.instagram.com/bonbonka_artist/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-bold uppercase text-xs tracking-widest hover:text-stone-400 transition-colors">
+              <InstagramIcon /> Instagram
             </a>
-            <a href="https://t.me/Bonbonkart_" className="flex items-center gap-2 font-bold uppercase text-xs tracking-widest hover:text-stone-400 transition-colors">
-              <Send className="w-4 h-4" /> Telegram
+            <a href="https://t.me/Bonbonkart_" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-bold uppercase text-xs tracking-widest hover:text-stone-400 transition-colors">
+              <SendIcon /> Telegram
             </a>
             <a href="mailto:anastasiya.bondar888@gmail.com" className="flex items-center gap-2 font-bold uppercase text-xs tracking-widest hover:text-stone-400 transition-colors">
-              <Mail className="w-4 h-4" /> Email
+              <MailIcon /> Email
             </a>
           </div>
           <p className="text-[10px] text-stone-400 uppercase tracking-[0.5em]">
