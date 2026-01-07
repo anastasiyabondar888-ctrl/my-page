@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anastasiia Bandar | Photography in Prague</title>
+    <title>Anastasiya Bondar | Photography in Prague</title>
     
-    <!-- Шрифты и иконки -->
+    <!-- Fonts and Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@300;600;700&display=swap" rel="stylesheet">
@@ -37,57 +37,55 @@
         .service-card:hover img { transform: scale(1.05); }
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
-        /* Скрытие скроллбара */
+        /* Hiding scrollbar */
         #mobile-menu::-webkit-scrollbar { display: none; }
         #mobile-menu { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
 <body class="bg-white text-brand-dark font-sans leading-relaxed">
 
-    <!-- Навигация -->
+    <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-            <a href="#" class="font-display font-bold text-xl tracking-widest uppercase">Anastasiia Bandar</a>
+            <a href="#" class="font-display font-bold text-xl tracking-widest uppercase">Anastasiya Bondar</a>
             
-            <!-- Десктопное меню -->
+            <!-- Desktop Menu -->
             <div class="hidden md:flex space-x-8 text-xs uppercase tracking-widest font-semibold">
-                <a href="#about" class="hover:text-brand-gold transition-colors">Обо мне</a>
-                <a href="#services" class="hover:text-brand-gold transition-colors">Услуги</a>
-                <a href="#wedding" class="hover:text-brand-gold transition-colors">Свадьбы</a>
-                <a href="#reviews" class="hover:text-brand-gold transition-colors">Отзывы</a>
-                <a href="#contact" class="hover:text-brand-gold transition-colors text-brand-gold">Контакты</a>
+                <a href="#about" class="hover:text-brand-gold transition-colors">About</a>
+                <a href="#services" class="hover:text-brand-gold transition-colors">Services</a>
+                <a href="#wedding" class="hover:text-brand-gold transition-colors">Weddings</a>
+                <a href="#reviews" class="hover:text-brand-gold transition-colors">Reviews</a>
+                <a href="#contact" class="hover:text-brand-gold transition-colors text-brand-gold">Contact</a>
             </div>
 
-            <!-- Кнопка бургер -->
+            <!-- Burger Button -->
             <button id="mobile-menu-btn" class="md:hidden text-2xl p-2 transition-transform active:scale-90">
                 <i class="fa-solid fa-bars-staggered"></i>
             </button>
         </div>
     </nav>
 
-    <!-- Мобильное меню (Вынесено из nav для корректного отображения высоты) -->
+    <!-- Mobile Menu -->
     <div id="mobile-menu" class="fixed inset-0 h-screen w-full bg-white z-[70] flex flex-col items-center justify-start transition-transform duration-500 translate-x-full md:hidden overflow-y-auto">
-        <!-- Верхняя планка с кнопкой закрытия -->
         <div class="w-full flex justify-end px-6 h-20 items-center">
             <button id="close-menu-btn" class="text-2xl p-2">
                 <i class="fa-solid fa-xmark"></i>
             </button>
         </div>
         
-        <!-- Ссылки (начало сразу после верхней планки) -->
         <div class="flex flex-col items-center space-y-8 text-sm uppercase tracking-[0.3em] font-semibold py-4">
-            <a href="#about" class="mobile-link hover:text-brand-gold transition-colors">Обо мне</a>
-            <a href="#services" class="mobile-link hover:text-brand-gold transition-colors">Услуги</a>
-            <a href="#wedding" class="mobile-link hover:text-brand-gold transition-colors">Свадьбы</a>
-            <a href="#reviews" class="mobile-link hover:text-brand-gold transition-colors">Отзывы</a>
-            <a href="#contact" class="mobile-link hover:text-brand-gold transition-colors text-brand-gold">Контакты</a>
+            <a href="#about" class="mobile-link hover:text-brand-gold transition-colors">About</a>
+            <a href="#services" class="mobile-link hover:text-brand-gold transition-colors">Services</a>
+            <a href="#wedding" class="mobile-link hover:text-brand-gold transition-colors">Weddings</a>
+            <a href="#reviews" class="mobile-link hover:text-brand-gold transition-colors">Reviews</a>
+            <a href="#contact" class="mobile-link hover:text-brand-gold transition-colors text-brand-gold">Contact</a>
             
             <div class="pt-6 flex space-x-10 text-2xl text-gray-400">
-                <a href="#" class="hover:text-brand-gold transition-colors"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="hover:text-brand-gold transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/bonbonka_artist/" target="_blank" class="hover:text-brand-gold transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://t.me/Bonbonkart_" target="_blank" class="hover:text-brand-gold transition-colors"><i class="fa-brands fa-telegram"></i></a>
             </div>
             
-            <p class="pt-8 text-[9px] text-gray-300 tracking-[0.5em] uppercase pb-12">Anastasiia Bandar Photography</p>
+            <p class="pt-8 text-[9px] text-gray-300 tracking-[0.5em] uppercase pb-12">Anastasiya Bondar Photography</p>
         </div>
     </div>
 
@@ -103,20 +101,20 @@
             <h1 class="font-display text-5xl md:text-8xl font-bold uppercase tracking-tighter mb-4">
                 Capturing <span class="text-brand-gold italic">Soul</span>
             </h1>
-            <p class="text-lg md:text-xl font-light tracking-widest uppercase mb-12 opacity-90">Anastasiia Bandar — Professional Photography in Prague</p>
-            <a href="#services" class="border border-white/40 hover:bg-white hover:text-brand-dark transition-all px-10 py-4 text-xs uppercase tracking-widest font-bold inline-block">Посмотреть прайс</a>
+            <p class="text-lg md:text-xl font-light tracking-widest uppercase mb-12 opacity-90">Anastasiya Bondar — Professional Photography in Prague</p>
+            <a href="#services" class="border border-white/40 hover:bg-white hover:text-brand-dark transition-all px-10 py-4 text-xs uppercase tracking-widest font-bold inline-block">View Pricing</a>
         </div>
     </header>
 
-    <!-- Обо мне -->
+    <!-- About Section -->
     <section id="about" class="py-32 px-6 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div class="reveal">
                 <h2 class="font-display text-xs uppercase tracking-[0.3em] text-brand-gold font-bold mb-4">About Me</h2>
-                <p class="text-4xl md:text-5xl font-display font-bold mb-8 italic">Привет, я Анастасия.</p>
+                <p class="text-4xl md:text-5xl font-display font-bold mb-8 italic">Hi, I'm Anastasiya.</p>
                 <div class="space-y-6 text-gray-600">
-                    <p>Фотография для меня — это не просто нажатие на кнопку спуска. Это искусство видеть красоту в деталях, искренность в эмоциях и ловить те самые "непостановочные" моменты, которые становятся самыми ценными.</p>
-                    <p>Уже более 5 лет я помогаю моим героям увидеть себя настоящими на фоне прекрасной Праги и по всей Европе. Моя задача — сделать так, чтобы во время съемки вы чувствовали себя легко и уверенно.</p>
+                    <p>Photography for me is more than just pressing a shutter button. It's the art of seeing beauty in details, sincerity in emotions, and capturing those "unposed" moments that become the most precious.</p>
+                    <p>For over 5 years, I have been helping my clients see their true selves against the backdrop of beautiful Prague and across Europe. My goal is to make you feel light and confident during the shoot.</p>
                 </div>
             </div>
             <div class="aspect-[4/5] bg-gray-100 overflow-hidden reveal">
@@ -127,16 +125,16 @@
         </div>
     </section>
 
-    <!-- Секция Услуг -->
+    <!-- Services Section -->
     <section id="services" class="py-32 px-6 bg-brand-light">
         <div class="max-w-7xl mx-auto">
             <div class="mb-20 text-center">
-                <h2 class="font-display text-xs uppercase tracking-[0.3em] text-brand-gold font-bold mb-4">Услуги</h2>
-                <p class="text-4xl md:text-5xl font-display font-bold tracking-tight">Индивидуальные решения</p>
+                <h2 class="font-display text-xs uppercase tracking-[0.3em] text-brand-gold font-bold mb-4">Services</h2>
+                <p class="text-4xl md:text-5xl font-display font-bold tracking-tight">Tailored Solutions</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20">
-                <!-- Портрет -->
+                <!-- Portrait -->
                 <div class="service-card group">
                     <div class="overflow-hidden mb-6 aspect-[4/5] bg-white">
                         <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800" 
@@ -145,9 +143,9 @@
                     </div>
                     <h3 class="font-display text-2xl font-bold mb-4 uppercase tracking-tight">Portrait Session</h3>
                     <ul class="space-y-3 mb-8 text-sm text-gray-500">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-gold mr-3"></i>1.5 часа съемки</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-gold mr-3"></i>25 фото в ретуши</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-gold mr-3"></i>Все удачные кадры (80+)</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-gold mr-3"></i>1.5 hours of shooting</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-gold mr-3"></i>25 retouched photos</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-gold mr-3"></i>All successful shots (80+)</li>
                     </ul>
                     <div class="text-xl font-bold font-display border-t border-gray-100 pt-4">2 600 CZK</div>
                 </div>
@@ -156,19 +154,19 @@
                 <div class="service-card group">
                     <div class="overflow-hidden mb-6 aspect-[4/5] bg-white">
                         <img src="https://images.unsplash.com/photo-1516589174184-c68526671ee6?auto=format&fit=crop&q=80&w=800" 
-                             alt="[Image of Love Story]" 
+                             alt="" 
                              class="w-full h-full object-cover transition-transform duration-700">
                     </div>
                     <h3 class="font-display text-2xl font-bold mb-4 uppercase tracking-tight">Love Story</h3>
                     <ul class="space-y-3 mb-8 text-sm text-gray-500">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-gold mr-3"></i>2 часа в центре Праги</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-gold mr-3"></i>40 фото в ретуши</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-gold mr-3"></i>Мудборд и стайлинг</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-gold mr-3"></i>2 hours in Prague center</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-gold mr-3"></i>40 retouched photos</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-gold mr-3"></i>Moodboard & styling</li>
                     </ul>
                     <div class="text-xl font-bold font-display border-t border-gray-100 pt-4">3 000 CZK</div>
                 </div>
 
-                <!-- Семейная -->
+                <!-- Family Heritage -->
                 <div class="service-card group">
                     <div class="overflow-hidden mb-6 aspect-[4/5] bg-white">
                         <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=800" 
@@ -177,9 +175,9 @@
                     </div>
                     <h3 class="font-display text-2xl font-bold mb-4 uppercase tracking-tight">Family Heritage</h3>
                     <ul class="space-y-3 mb-8 text-sm text-gray-500">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-gold mr-3"></i>Домашняя или уличная съемка</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-gold mr-3"></i>30 фото в ретуши</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-gold mr-3"></i>Печать 5 фото в подарок</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-gold mr-3"></i>Home or outdoor shoot</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-gold mr-3"></i>30 retouched photos</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-gold mr-3"></i>5 gift prints included</li>
                     </ul>
                     <div class="text-xl font-bold font-display border-t border-gray-100 pt-4">3 500 CZK</div>
                 </div>
@@ -187,12 +185,12 @@
         </div>
     </section>
 
-    <!-- Свадебная секция -->
+    <!-- Wedding Section -->
     <section id="wedding" class="bg-brand-dark text-white py-32 px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div class="reveal">
                 <h2 class="font-display text-xs uppercase tracking-[0.3em] text-brand-gold font-bold mb-4">Weddings</h2>
-                <p class="text-4xl md:text-5xl font-display font-bold mb-12">Ваша история любви</p>
+                <p class="text-4xl md:text-5xl font-display font-bold mb-12">Your Love Story</p>
                 
                 <div class="space-y-8">
                     <div class="border-b border-white/10 pb-8">
@@ -200,7 +198,7 @@
                             <h4 class="text-xl font-bold uppercase tracking-wider">Civil Ceremony</h4>
                             <span class="text-brand-gold font-bold text-2xl">12 000 CZK</span>
                         </div>
-                        <p class="text-sm text-gray-400">3 часа съемки, регистрация + прогулка, 120+ фото в ретуши.</p>
+                        <p class="text-sm text-gray-400">3 hours of shooting, ceremony + walk, 120+ retouched photos.</p>
                     </div>
                     
                     <div class="border-b border-white/10 pb-8">
@@ -208,7 +206,7 @@
                             <h4 class="text-xl font-bold uppercase tracking-wider">Standard Day</h4>
                             <span class="text-brand-gold font-bold text-2xl">22 000 CZK</span>
                         </div>
-                        <p class="text-sm text-gray-400">8 часов, от сборов до начала банкета, 350+ фото, бокс с принтами.</p>
+                        <p class="text-sm text-gray-400">8 hours, from prep to reception, 350+ photos, print box included.</p>
                     </div>
 
                     <div class="pb-8">
@@ -216,97 +214,97 @@
                             <h4 class="text-xl font-bold uppercase tracking-wider">Full Story</h4>
                             <span class="text-brand-gold font-bold text-2xl">32 000 CZK</span>
                         </div>
-                        <p class="text-sm text-gray-400">До 14 часов съемки, аэросъемка, анонс серии в день свадьбы, 600+ фото.</p>
+                        <p class="text-sm text-gray-400">Up to 14 hours, aerial shots, same-day preview, 600+ photos.</p>
                     </div>
                 </div>
             </div>
             <div class="relative reveal">
                 <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1200" 
-                     alt="" 
+                     alt="[Image of wedding couple]" 
                      class="w-full aspect-square object-cover grayscale hover:grayscale-0 transition-all duration-1000">
                 <div class="absolute -bottom-10 -left-10 bg-brand-gold p-10 hidden md:block">
-                    <p class="text-xs uppercase tracking-widest font-bold">Booking 2024/2025</p>
+                    <p class="text-xs uppercase tracking-widest font-bold">Booking 2026</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Отзывы -->
+    <!-- Reviews Section -->
     <section id="reviews" class="py-32 px-6 max-w-7xl mx-auto">
         <h2 class="font-display text-xs uppercase tracking-[0.3em] text-brand-gold font-bold mb-4 text-center">Reviews</h2>
-        <p class="text-4xl font-display font-bold mb-20 text-center italic">Слова благодарности</p>
+        <p class="text-4xl font-display font-bold mb-20 text-center italic">Kind Words</p>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             <div class="bg-brand-light p-10 border-t-2 border-brand-gold reveal">
-                <p class="italic text-gray-600 mb-8">"Анастасия сделала нашу свадьбу незабываемой. Фотографии получились такими живыми, мы даже не заметили, как пролетело время съемки!"</p>
-                <div class="font-bold uppercase text-xs tracking-widest">— Мария и Ян</div>
+                <p class="italic text-gray-600 mb-8">"Anastasiya made our wedding unforgettable. The photos are so alive, we didn't even notice how fast the time flew!"</p>
+                <div class="font-bold uppercase text-xs tracking-widest">— Maria & Jan</div>
             </div>
             <div class="bg-brand-light p-10 border-t-2 border-brand-gold reveal">
-                <p class="italic text-gray-600 mb-8">"Лучший опыт фотосессии в Праге. Настя очень помогла с позированием и выбором локаций, где не было толп туристов."</p>
-                <div class="font-bold uppercase text-xs tracking-widest">— Александра</div>
+                <p class="italic text-gray-600 mb-8">"The best photoshoot experience in Prague. Nastya helped so much with posing and choosing locations without crowds of tourists."</p>
+                <div class="font-bold uppercase text-xs tracking-widest">— Alexandra</div>
             </div>
             <div class="bg-brand-light p-10 border-t-2 border-brand-gold reveal">
-                <p class="italic text-gray-600 mb-8">"Коммерческая съемка для моего бренда прошла на одном дыхании. Результат превзошел все ожидания, очень стильно."</p>
-                <div class="font-bold uppercase text-xs tracking-widest">— Денис, дизайнер</div>
+                <p class="italic text-gray-600 mb-8">"Commercial shoot for my brand was flawless. The result exceeded all expectations, very stylish."</p>
+                <div class="font-bold uppercase text-xs tracking-widest">— Denis, Designer</div>
             </div>
         </div>
     </section>
 
-    <!-- Условия -->
+    <!-- Conditions Section -->
     <section id="terms" class="py-32 px-6 bg-brand-dark text-white/80">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-center md:text-left">
             <div>
-                <h5 class="font-display font-bold uppercase text-xs tracking-widest mb-6 text-brand-gold">Бронирование</h5>
-                <p class="text-sm">Депозит 20% для фиксации даты. Остаток в день съемки наличными или переводом.</p>
+                <h5 class="font-display font-bold uppercase text-xs tracking-widest mb-6 text-brand-gold">Booking</h5>
+                <p class="text-sm">20% deposit to secure the date. Balance on the day of the shoot via cash or transfer.</p>
             </div>
             <div>
-                <h5 class="font-display font-bold uppercase text-xs tracking-widest mb-6 text-brand-gold">Сроки</h5>
-                <p class="text-sm">Портреты — до 14 дней. Свадьбы — до 6 недель. Первые 10 фото вы получаете за 3 дня.</p>
+                <h5 class="font-display font-bold uppercase text-xs tracking-widest mb-6 text-brand-gold">Timing</h5>
+                <p class="text-sm">Portraits — up to 14 days. Weddings — up to 6 weeks. First 10 photos within 3 days.</p>
             </div>
             <div>
-                <h5 class="font-display font-bold uppercase text-xs tracking-widest mb-6 text-brand-gold">Транспорт</h5>
-                <p class="text-sm">Прага бесплатно. Другие города Чехии — от 500 CZK в зависимости от удаленности.</p>
+                <h5 class="font-display font-bold uppercase text-xs tracking-widest mb-6 text-brand-gold">Transport</h5>
+                <p class="text-sm">Free within Prague. Other cities in Czechia — from 500 CZK depending on distance.</p>
             </div>
             <div>
                 <h5 class="font-display font-bold uppercase text-xs tracking-widest mb-6 text-brand-gold">Privacy</h5>
-                <p class="text-sm">Конфиденциальная съемка без права публикации обсуждается заранее (+20% к стоимости).</p>
+                <p class="text-sm">Private shooting without publication rights is available (+20% of the cost).</p>
             </div>
         </div>
     </section>
 
-    <!-- Контакты -->
+    <!-- Contact Footer -->
     <footer id="contact" class="py-20 bg-white border-t border-gray-100">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="font-display text-4xl font-bold mb-8 italic">Anastasiia Bandar</h2>
+            <h2 class="font-display text-4xl font-bold mb-8 italic">Anastasiya Bondar</h2>
             <div class="flex flex-wrap justify-center gap-10 text-sm uppercase tracking-widest font-bold mb-16">
-                <a href="#" class="hover:text-brand-gold transition-colors"><i class="fa-brands fa-instagram mr-2"></i> Instagram</a>
-                <a href="#" class="hover:text-brand-gold transition-colors"><i class="fa-brands fa-whatsapp mr-2"></i> WhatsApp</a>
-                <a href="mailto:anastasiia.bandar@gmail.com" class="hover:text-brand-gold transition-colors"><i class="fa-solid fa-envelope mr-2"></i> Email</a>
+                <a href="https://www.instagram.com/bonbonka_artist/" target="_blank" class="hover:text-brand-gold transition-colors"><i class="fa-brands fa-instagram mr-2"></i> Instagram</a>
+                <a href="https://t.me/Bonbonkart_" target="_blank" class="hover:text-brand-gold transition-colors"><i class="fa-brands fa-telegram mr-2"></i> Telegram</a>
+                <a href="mailto:anastasiya.bondar888@gmail.com" class="hover:text-brand-gold transition-colors"><i class="fa-solid fa-envelope mr-2"></i> Email</a>
             </div>
-            <p class="text-[10px] text-gray-400 uppercase tracking-[0.4em]">&copy; 2024 Bandar Photography. Made for moments.</p>
+            <p class="text-[10px] text-gray-400 uppercase tracking-[0.4em]">&copy; 2026 Bondar Photography. Made for moments.</p>
         </div>
     </footer>
 
     <script>
-        // ЛОГИКА МОБИЛЬНОГО МЕНЮ
+        // MOBILE MENU LOGIC
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const closeMenuBtn = document.getElementById('close-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
 
-        // Открыть меню
+        // Open menu
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.remove('translate-x-full');
             document.body.style.overflow = 'hidden';
         });
 
-        // Закрыть меню
+        // Close menu
         closeMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.add('translate-x-full');
             document.body.style.overflow = '';
         });
 
-        // Закрыть при клике на ссылку
+        // Close on link click
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('translate-x-full');
@@ -314,7 +312,7 @@
             });
         });
 
-        // Анимация при скролле
+        // SCROLL REVEAL ANIMATION
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
